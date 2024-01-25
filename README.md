@@ -11,12 +11,8 @@ This is a solution to the [Newsletter sign-up form with success message challeng
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -54,17 +50,11 @@ Users should be able to:
 
 ### What I learned
 
-
-
-### Continued development
-
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
+I realized I had become kind of focused on having responsive = fluid, when that isn't always the case. Sometimes, responsive is just that - whatever works best for the screen size. With that in mind, I decided to commit to two different sizes and orientations for the card instead of having it be multiple different sizes based off of screen width.
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [Aligning list image with text](https://stackoverflow.com/questions/14709538/aligning-list-style-image-proportionally-with-text) - This helped me decide between using list-style-image and doing the method as seen here which allows for better text alignment with the image.
 
 ## Author
 
