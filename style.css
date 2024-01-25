@@ -52,6 +52,17 @@ main {
     width: min(100%, 80rem);
 }
 
+strong {
+    font-weight: var(--fw-bold);
+}
+
+button:hover,
+button:focus,
+button:active {
+    background: linear-gradient(to right, hsl(346, 100%, 66%), hsl(15, 100%, 61%));
+    box-shadow: 0 10px 10px 5px hsl(346, 50%, 66%, 0.5);
+}
+
 .card {
     border-radius: var(--border-radius);
     background-color: var(--clr-neutral-100);
@@ -64,7 +75,10 @@ main {
 
 .card.submitted {
     --start-content-display: none;
-    --thanks-content-display: block;
+    --thanks-content-display: flex;
+    width: 25rem;
+    padding: 2.5rem;
+    display: flex;
 }
 
 @media (max-width: 929px) {
@@ -72,6 +86,10 @@ main {
         padding: 0;
         width: 375px;
         border-radius: 0px;
+    }
+
+    .card.submitted {
+        min-height: 100svh;
     }
 }
 
@@ -96,6 +114,7 @@ main {
     justify-content: center;
     row-gap: 1rem;
     width: 500px;
+    color: var(--clr-neutral-700);
 }
 
 @media (max-width: 929px) {
@@ -108,6 +127,10 @@ main {
 .title {
     font-size: calc(var(--fs-p) * 3.5);
     font-weight: 700;
+}
+
+.thanks-state .title {
+    font-size: calc(var(--fs-p) * 2.5);
 }
 
 @media (max-width: 929px) {
@@ -143,6 +166,11 @@ main {
     color: var(--clr-neutral-800);
     font-weight: var(--fw-bold);
     font-size: calc(var(--fs-p) * 0.75);
+    display: flex;
+}
+
+.error-message {
+    display: none;
 }
 
 .email-form input {
@@ -152,13 +180,33 @@ main {
     border: 1px solid var(--clr-neutral-300);
 }
 
-.email-form button {
+input:focus-visible {
+    outline: none;
+    border-color: 1px solid var(--clr-neutral-700);
+    cursor: pointer;
+}
+
+form.error input,
+form.error input:focus-visible {
+    color: var(--clr-primary-400);
+    border-color: 1px solid var(--clr-primary-400);
+    background-color: hsl(4, 100%, 95%);
+}
+
+form.error .error-message{
+    color: var(--clr-primary-400);
+    margin-inline-start: auto;
+    display: inline;
+}  
+
+button {
     color: var(--clr-neutral-100);
     background-color: var(--clr-neutral-800);
     border: none;
     width: 100%;
     padding: 1rem;
     border-radius: var(--_border-radius);
+    font-weight: var(--fw-medium);
 }
 
 @media (max-width: 930px) {
@@ -174,5 +222,30 @@ main {
 }
 .thanks-state {
     display: var(--_thanks-content-display);
+    row-gap: 1rem;
+    --_font-size: calc(var(--fs-p) * .85);
+    justify-content: end;
+    flex-direction: column;
+    color: var(--clr-neutral-700);
+}
+
+.thanks-state .description,
+.thanks-state button {
+    font-size: var(--_font-size);
+} 
+
+.thanks-state .description {
+    line-height: 1.4;
+}
+
+@media (max-width: 929px) {
+    .thanks-state .description {
+        margin-block-end: 10rem;
+    }
+}
+
+.thanks-state button {
+    font-weight: var(--fw-medium);
+    border-radius: calc(var(--border-radius) * 0.15);
 }
 
